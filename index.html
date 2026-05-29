@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="./img/logo.png" alt="">
+            <ul>
+                <li><a href="index.html">Cadastro</a></li>
+                <li><a href="consulta.html">Consulta</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Registro de Despesas</h1>
+        <section id="container">
+            <select id="ano">
+                <option>Ano</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+            </select>
+            <select id="mes">
+                <option value="">Mês</option>
+                <option value="1">Janeiro</option>
+                <option value="2">Fevereiro</option>
+                <option value="3">Março</option>
+                <option value="4">Abril</option>
+                <option value="5">Maio</option>
+                <option value="6">Junho</option>
+                <option value="7">Julho</option>
+                <option value="8">Agosto</option>
+                <option value="9">Setembro</option>
+                <option value="10">Outubro</option>
+                <option value="11">Novembro</option>
+                <option value="12">Dezembro</option>
+            </select>
+            <input type="number" placeholder="Dia" max="31" min="1" id="dia">
+            <select id="tipo">
+                <option value="">Tipo</option>
+                <option value="">Alimentação</option>
+                <option value="">Educação</option>
+                <option value="">Saúde</option>
+                <option value="">Transporte</option>
+            </select>
+            <input type="text" placeholder="Valor" id="valor">
+        </section>
+        <div id="juntos">
+            <input type="text" placeholder="Descrição" id="descricao" size="150">
+            <button onclick="cadastrar()" id="adicionar"><img src="./img/mais.svg" alt=""></button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
