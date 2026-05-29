@@ -7,12 +7,10 @@ class Despesas {
         this.descricao = descricao;
         this.valor = valor;
     }
-
     mostrar() {
-        return `Data: ${this.dia}/${this.mes}/${this.ano} - Tipo: ${this.tipo} - Descrição: ${this.descricao} - Valor: ${this.valor}`;
+        return `Data: ${this.dia}/${this.mes}/${this.ano}  -  Tipo: ${this.tipo}  -  Descrição: ${this.descricao}  -  Valor: ${this.valor}`;
     }
 }
-
 class Bd {
     constructor() {
         let id = localStorage.getItem("id");
@@ -42,7 +40,6 @@ class Bd {
         return despesas;
     }
 }
-
 function cadastrar() {
     let ano = document.getElementById("ano").value;
     let mes = document.getElementById("mes").value;
@@ -52,12 +49,10 @@ function cadastrar() {
     let valor = document.getElementById("valor").value;
 
     let d = new Despesas(ano,mes,dia,tipo,descricao,valor);
-
     let bd = new Bd();
     bd.gravar(d);
     alert("Dados cadastrados com sucesso!\n" + d.mostrar());
 }
-
 function exibir() {
     let cardDados = document.getElementById("views");
     if (!cardDados) return;
@@ -67,7 +62,6 @@ function exibir() {
 
     despesas.forEach(item => {
         let despesasObj = new Despesas(item.ano,item.mes,item.dia,item.tipo,item.descricao,item.valor);
-
         let itemLista = document.createElement("li");
         itemLista.textContent = despesasObj.mostrar();
         lista.appendChild(itemLista);
@@ -75,9 +69,6 @@ function exibir() {
     cardDados.innerHTML = "";
     cardDados.appendChild(lista);
 }
-
 window.onload = () => {
-
     exibir();
-
 };
